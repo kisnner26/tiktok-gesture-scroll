@@ -5,7 +5,7 @@
   "scripts": {
     "setup": "node scripts/setup.mjs",
     "icons": "node scripts/make-icons.mjs",
-    "test": "node --test test/",
+    "test": "node --test",
     "pack": "node scripts/pack.mjs"
   },
   "author": "kisnner26",
