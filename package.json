@@ -1,0 +1,18 @@
+{
+  "name": "tiktok-gesture-scroll",
+  "version": "0.2.1",
+  "description": "extension de navegador: pasa de video en tiktok con un gesto de la mano frente a la webcam",
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "icons": "node scripts/make-icons.mjs",
+    "test": "node --test test/",
+    "pack": "node scripts/pack.mjs"
+  },
+  "author": "kisnner26",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "@mediapipe/tasks-vision": "^1.0.1"
+  },
+  "private": true
+}

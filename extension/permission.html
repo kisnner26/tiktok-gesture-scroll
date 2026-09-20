@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Permiso de cámara</title>
+<link rel="stylesheet" href="popup.css"></head>
+<body class="page">
+  <main class="card">
+    <svg class="sprig" viewBox="0 0 60 84" aria-hidden="true">
+      <path d="M30 82C29 64 31 46 30 28"/>
+      <g transform="translate(30 20)"><ellipse rx="4.5" ry="10"/><ellipse rx="4.5" ry="10" transform="rotate(72)"/><ellipse rx="4.5" ry="10" transform="rotate(144)"/><ellipse rx="4.5" ry="10" transform="rotate(216)"/><ellipse rx="4.5" ry="10" transform="rotate(288)"/><circle r="3.4"/></g>
+      <path d="M30 58C20 54 14 46 16 39c9 0 14 8 14 19zM30 66c9-3 15-10 14-17-8 1-14 8-14 17z"/>
+    </svg>
+    <h1>Permiso de cámara</h1>
+    <div class="rule" style="margin:12px auto"></div>
+    <p>La extensión necesita la webcam para ver tu mano. El video se procesa en tu equipo y no se guarda ni se envía a ningún lado.</p>
+    <button id="allow" class="btn"><span>Permitir cámara</span></button>
+    <p id="msg" class="hint" role="status"></p>
+  </main>
+  <script src="permission.js"></script>
+</body></html>

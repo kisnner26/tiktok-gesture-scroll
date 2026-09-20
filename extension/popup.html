@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>TikTok Gesture Scroll</title>
+<link rel="stylesheet" href="popup.css"></head>
+<body class="popup">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="thumb-up" viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></symbol>
+      <symbol id="thumb-down" viewBox="0 0 24 24"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"/></symbol>
+      <symbol id="two-up" viewBox="0 0 24 24"><path d="M8.5 13V4.5a1.5 1.5 0 0 1 3 0V12M11.5 12V3.5a1.5 1.5 0 0 1 3 0V13M8.5 13c-1.6-.7-3.2.2-3 1.9.3 2.4 2.6 5.6 5.5 6.6 3.2 1.1 6.2-.6 6.7-3.9l.4-3.1c.1-1-.6-1.8-1.6-1.8-.8 0-1.4.4-1.8 1M14.5 13.2V13"/></symbol>
+      <symbol id="two-down" viewBox="0 0 24 24"><g transform="rotate(180 12 12)"><path d="M8.5 13V4.5a1.5 1.5 0 0 1 3 0V12M11.5 12V3.5a1.5 1.5 0 0 1 3 0V13M8.5 13c-1.6-.7-3.2.2-3 1.9.3 2.4 2.6 5.6 5.5 6.6 3.2 1.1 6.2-.6 6.7-3.9l.4-3.1c.1-1-.6-1.8-1.6-1.8-.8 0-1.4.4-1.8 1M14.5 13.2V13"/></g></symbol>
+      <symbol id="sprig" viewBox="0 0 60 84">
+        <path d="M30 82C29 64 31 46 30 28"/>
+        <g transform="translate(30 20)"><ellipse rx="4.5" ry="10" transform="rotate(0)"/><ellipse rx="4.5" ry="10" transform="rotate(72)"/><ellipse rx="4.5" ry="10" transform="rotate(144)"/><ellipse rx="4.5" ry="10" transform="rotate(216)"/><ellipse rx="4.5" ry="10" transform="rotate(288)"/><circle r="3.4"/></g>
+        <path d="M30 58C20 54 14 46 16 39c9 0 14 8 14 19zM30 66c9-3 15-10 14-17-8 1-14 8-14 17z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <header>
+    <div class="brand">
+      <h1>Gesture Scroll</h1>
+      <p class="sub">para tiktok · con la mano</p>
+    </div>
+    <label class="switch" title="Activar o desactivar">
+      <input type="checkbox" id="enabled" aria-label="Activar"><span class="track"><i></i></span>
+    </label>
+  </header>
+  <div class="rule"></div>
+
+  <div class="preview" id="preview" hidden>
+    <div class="mirror"><video id="cam" autoplay muted playsinline></video><canvas id="overlay"></canvas></div>
+    <div class="badge" id="badge">sin mano</div>
+    <div class="fps" id="fps"></div>
+    <div class="hold" aria-hidden="true"><i id="holdBar"></i></div>
+  </div>
+  <div class="placeholder" id="placeholder">
+    <svg class="sprig" aria-hidden="true"><use href="#sprig"/></svg>
+    <p id="status" role="status"></p>
+  </div>
+  <p class="seen" id="seen"></p>
+
+  <section class="how">
+    <span class="tool-label">Gestos</span>
+    <div class="pair">
+      <figure><svg class="glyph" aria-hidden="true"><use id="gNext" href="#thumb-up"/></svg>
+        <figcaption><span class="tiny">siguiente</span><em id="nNext"></em></figcaption></figure>
+      <figure><svg class="glyph" aria-hidden="true"><use id="gPrev" href="#thumb-down"/></svg>
+        <figcaption><span class="tiny">anterior</span><em id="nPrev"></em></figcaption></figure>
+    </div>
+    <p class="note">mantén el gesto un instante; baja la mano entre uno y otro.</p>
+  </section>
+
+  <section class="opts">
+    <label class="tool">
+      <select id="preset" aria-label="Elegir gestos">
+        <option value="thumbs">pulgar arriba / abajo</option>
+        <option value="two">dos dedos arriba / abajo</option>
+      </select>
+    </label>
+    <label class="tool"><span class="tool-label"><span>Tiempo para confirmar</span><output id="holdOut"></output></span>
+      <input type="range" id="hold" min="200" max="800" step="100">
+    </label>
+  </section>
+
+  <footer><span aria-hidden="true">✦</span> todo se procesa en tu equipo <span aria-hidden="true">✦</span></footer>
+  <script src="popup.js" type="module"></script>
+</body></html>

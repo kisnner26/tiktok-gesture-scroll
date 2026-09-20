@@ -1,0 +1,4 @@
+node_modules/
+extension/vendor/
+dist/
+.DS_Store
